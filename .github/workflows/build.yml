@@ -1,5 +1,10 @@
 name: build-apk
 on: [push, workflow_dispatch]
+
+# 릴리스에 APK 를 올리려면 쓰기 권한이 필요하다
+permissions:
+  contents: write
+
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -14,7 +19,27 @@ jobs:
         with:
           gradle-version: '8.7'
       - run: gradle assembleDebug
+
+      # Actions 아티팩트는 로그인해야 받을 수 있고 ZIP 으로 묶여 나온다.
+      # 폰에서 바로 받으려면 릴리스에 올려 고정 링크를 만들어야 한다.
+      - name: 파일 이름 정리
+        run: cp app/build/outputs/apk/debug/app-debug.apk plus25.apk
+
       - uses: actions/upload-artifact@v4
         with:
           name: TrainingLog-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: plus25.apk
+
+      - name: 최신 릴리스에 올리기
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # latest 태그 하나를 계속 덮어쓴다 — 링크가 바뀌지 않게
+          gh release view latest >/dev/null 2>&1 \
+            || gh release create latest --title "최신 빌드" --notes "자동 빌드"
+          gh release edit latest \
+            --title "최신 빌드 · $(date -u +%Y-%m-%d)" \
+            --notes "커밋 ${GITHUB_SHA:0:7} · $(date -u +'%Y-%m-%d %H:%M') UTC
+          설치: 아래 plus25.apk 를 폰에서 받아 실행. 기존 앱 위에 덮어쓰면 기록은 그대로 남음."
+          gh release upload latest plus25.apk --clobber
