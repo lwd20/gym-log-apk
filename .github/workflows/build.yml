@@ -18,12 +18,15 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.7'
-      - run: gradle assembleDebug
+      # 디버그 빌드는 android:debuggable 이 박혀 Play Protect 가 사이드로드에서
+      # 가장 세게 잡는다. release 도 같은 keystore 를 쓰므로 서명이 같아
+      # 기존 앱 위에 그대로 덮어써진다.
+      - run: gradle assembleRelease
 
       # Actions 아티팩트는 로그인해야 받을 수 있고 ZIP 으로 묶여 나온다.
       # 폰에서 바로 받으려면 릴리스에 올려 고정 링크를 만들어야 한다.
       - name: 파일 이름 정리
-        run: cp app/build/outputs/apk/debug/app-debug.apk plus25.apk
+        run: cp app/build/outputs/apk/release/app-release.apk plus25.apk
 
       - uses: actions/upload-artifact@v4
         with:
