@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 어두운 배경 MEV~MAV -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#33E3B95A"/>
-</shape>

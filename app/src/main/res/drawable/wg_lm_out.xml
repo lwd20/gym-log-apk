@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 축 밖 — 자리로 구분되지 않으므로 모양을 바꾼다 -->
-<rotate xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fromDegrees="45" android:toDegrees="45"
-    android:pivotX="50%" android:pivotY="50%">
-    <shape android:shape="rectangle">
-        <solid android:color="#C0442A"/>
-    </shape>
-</rotate>

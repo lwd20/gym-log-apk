@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- MAV 존 — 분석탭 rgba(acc,.36) -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#5C8A6320"/>
-</shape>

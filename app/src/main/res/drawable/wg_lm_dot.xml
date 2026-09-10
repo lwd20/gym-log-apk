@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 현재값 — 구간 띠와 색상 자체를 갈라 놓은 갈색 -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-    <solid android:color="#6B4526"/>
-</shape>

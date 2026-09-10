@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <color name="ic_bg">#B5AC94</color>
-  <!-- 밝은 알림 판 위 — 어두운 금색이어야 읽힌다 -->
-  <color name="noti_accent">#8A6320</color>
-  <color name="noti_accent_bg">#1F8A6320</color>
-</resources>

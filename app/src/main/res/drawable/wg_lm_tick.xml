@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 보정 MRV — 분석탭 rgba(sig,.7) -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#B3C0442A"/>
-</shape>

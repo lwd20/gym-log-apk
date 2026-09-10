@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <!-- 어두운 알림 판 위 — 밝은 금색으로 뒤집는다 -->
-  <color name="noti_accent">#E9C267</color>
-  <color name="noti_accent_bg">#24E9C267</color>
-</resources>
