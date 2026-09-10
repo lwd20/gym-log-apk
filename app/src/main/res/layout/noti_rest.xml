@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  접힌 알림 — 안드로이드가 이 뷰의 높이를 40dp 남짓에서 자른다.
+  그래서 버튼을 아래로 못 내리고 오른쪽에 둔다(펼침은 noti_rest_big).
+
+  숫자를 30 → 27sp 로 조금 줄여 생긴 자리에 꼬리 선을 깔았다.
+  워드마크 아래 선과 같은 모티프라 앱과 알림이 같은 언어를 쓰게 된다.
+
+  판은 시스템이 칠하고(배경 지정 없음) 글자색은 ?android:attr 로 받아
+  밝은 테마와 어두운 테마에서 모두 읽히게 한다.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:baselineAligned="false"
+    android:paddingTop="3dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 시간과 목표는 밑선을 맞춰 한 덩어리로 읽히게 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <Chronometer
+                android:id="@+id/ch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:includeFontPadding="false"
+                android:textColor="?android:attr/textColorPrimary"/>
+
+            <TextView
+                android:id="@+id/tgt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:maxLines="1"
+                android:includeFontPadding="false"
+                android:alpha="0.5"
+                android:textColor="?android:attr/textColorSecondary"/>
+        </LinearLayout>
+
+        <!-- 꼬리 선 — 강조색에서 시작해 오른쪽으로 사라진다 -->
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/noti_rule"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:textSize="11.5sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.08"
+        android:maxLines="1"
+        android:textColor="@color/noti_accent"
+        android:background="@drawable/noti_btn"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"/>
+
+    <TextView
+        android:id="@+id/bStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        android:textSize="11.5sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.08"
+        android:maxLines="1"
+        android:alpha="0.7"
+        android:textColor="?android:attr/textColorSecondary"
+        android:paddingLeft="13dp"
+        android:paddingRight="11dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"/>
+</LinearLayout>

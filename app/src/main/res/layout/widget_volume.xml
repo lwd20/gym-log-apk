@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/bgimg"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="fitXY" android:src="@drawable/wg_bg"
+        android:importantForAccessibility="no"/>
+    <LinearLayout android:id="@+id/content"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="top"
+        android:paddingLeft="16dp" android:paddingRight="16dp"
+        android:paddingTop="12dp" android:paddingBottom="13dp">
+        <TextView android:id="@+id/vhd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WEEKLY SETS"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.28" android:textColor="#9A8A63"/>
+        <TextView android:id="@+id/l1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.08" android:textColor="#C9BFA8"/>
+        <ProgressBar android:id="@+id/b1"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent" android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:progressDrawable="@drawable/wg_bar"/>
+        <TextView android:id="@+id/l2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.08" android:textColor="#C9BFA8"/>
+        <ProgressBar android:id="@+id/b2"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent" android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:progressDrawable="@drawable/wg_bar"/>
+        <TextView android:id="@+id/l3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.08" android:textColor="#C9BFA8"/>
+        <ProgressBar android:id="@+id/b3"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent" android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:progressDrawable="@drawable/wg_bar"/>
+        <TextView android:id="@+id/l4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.08" android:textColor="#C9BFA8"/>
+        <ProgressBar android:id="@+id/b4"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent" android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:progressDrawable="@drawable/wg_bar"/>
+        <TextView android:id="@+id/l5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.08" android:textColor="#C9BFA8"/>
+        <ProgressBar android:id="@+id/b5"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent" android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:progressDrawable="@drawable/wg_bar"/>
+        <TextView android:id="@+id/l6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.08" android:textColor="#C9BFA8"/>
+        <ProgressBar android:id="@+id/b6"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent" android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:progressDrawable="@drawable/wg_bar"/>
+        <TextView android:id="@+id/vfoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end"
+            android:textSize="13sp" android:textColor="#8F887C"/>
+    </LinearLayout>
+</FrameLayout>

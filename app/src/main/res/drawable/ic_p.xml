@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  앱 아이콘 앞면 — Archivo 800 의 'P' 글리프 윤곽 그대로.
+
+  손으로 그리면 비례가 매번 달라지고 시안과도 어긋난다. 그래서 시안에서 쓴
+  글꼴의 실제 외곽선을 fontTools 로 뽑아 넣었다. 임의로 다시 그리지 말 것.
+
+  108 캔버스에 45.4 x 52 크기로 정중앙 배치. 적응형 아이콘은 런처가 바깥을
+  잘라내는데, 중심에서 가장 먼 좌표가 34.5 라 안전 반경 36 안에 든다.
+  바깥 윤곽과 속 구멍의 감김 방향이 반대라 기본 nonZero 로 구멍이 뚫린다.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#F4F1EA"
+        android:pathData="M39.15 71V37H57.86Q61.32 37 63.77 38.41Q66.22 39.82 67.54 42.32Q68.85 44.82 68.85 48.18Q68.85 51.65 67.49 54.17Q66.13 56.7 63.63 58.11Q61.13 59.52 57.66 59.52H48.01V71ZM48.01 52.69H55.58Q57.66 52.69 58.75 51.53Q59.84 50.36 59.84 48.28Q59.84 46.8 59.37 45.86Q58.9 44.92 57.96 44.4Q57.02 43.88 55.58 43.88H48.01Z"/>
+</vector>

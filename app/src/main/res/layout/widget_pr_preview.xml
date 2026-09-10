@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/wg_bg"
+        android:importantForAccessibility="no"/>
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp" android:paddingRight="16dp"
+        android:paddingTop="12dp" android:paddingBottom="13dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:maxLines="1" android:ellipsize="end"
+                android:text="RECENT PR" android:textSize="11sp" android:textStyle="bold"
+                android:letterSpacing="0.28" android:textColor="#9A8A63"/>
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="3" android:textSize="11sp" android:textStyle="bold" android:textColor="#5C5648"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="9dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cable Art Chest in Shoulder"
+                android:maxLines="1" android:ellipsize="end"
+                android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.02" android:textColor="#C9BFA8"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="55x12  ·  +2.4%  ·  오늘"
+                android:maxLines="1" android:ellipsize="end"
+                android:textSize="11sp" android:letterSpacing="0.02" android:textColor="#E3B95A"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Incline Chest Press"
+                android:maxLines="1" android:ellipsize="end"
+                android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.02" android:textColor="#C9BFA8"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="39x12  ·  +1.8%  ·  2일 전"
+                android:maxLines="1" android:ellipsize="end"
+                android:textSize="11sp" android:letterSpacing="0.02" android:textColor="#E3B95A"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seated Leg Curl"
+                android:maxLines="1" android:ellipsize="end"
+                android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.02" android:textColor="#C9BFA8"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="58x12  ·  +3.5%  ·  6일 전"
+                android:maxLines="1" android:ellipsize="end"
+                android:textSize="11sp" android:letterSpacing="0.02" android:textColor="#E3B95A"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="1" android:ellipsize="end"
+            android:textSize="12sp" android:letterSpacing="0.02" android:textColor="#8F887C"/>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 밝은 배경 — 안은 비우고 테두리로 범위만 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#00000000"/>
+    <stroke android:width="1dp" android:color="#382A241E"/>
+    <corners android:radius="3dp"/>
+</shape>

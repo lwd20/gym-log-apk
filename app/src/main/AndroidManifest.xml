@@ -1,0 +1,137 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <!-- 삼성헬스가 헬스 커넥트에 써 둔 섭취 영양을 읽는다 -->
+  <uses-permission android:name="android.permission.health.READ_NUTRITION"/>
+  <uses-permission android:name="android.permission.health.READ_WEIGHT"/>
+  <queries>
+    <package android:name="com.google.android.apps.healthdata"/>
+  </queries>
+  <application
+      android:label="PLUS2.5"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:usesCleartextTraffic="false"
+      android:enableOnBackInvokedCallback="true"
+      android:theme="@android:style/Theme.Material.NoActionBar">
+    <activity android:name=".MainActivity"
+        android:exported="true"
+        android:configChanges="orientation|screenSize|keyboardHidden">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+      <!-- 헬스 커넥트 근거 화면 · 안드로이드 13 이하.
+           14 이상은 아래 activity-alias 의 VIEW_PERMISSION_USAGE 가 맡는다.
+           둘 다 있어야 어느 안드로이드에서도 목록에 뜬다 — 하나만 있으면
+           그쪽 버전에서만 보이고 반대쪽에서는 앱이 아예 안 나타난다. -->
+      <intent-filter>
+        <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE"/>
+      </intent-filter>
+    </activity>
+    <!-- 헬스 커넥트는 건강 권한을 쓰는 앱에 근거를 보여 줄 화면을 요구한다.
+         이게 없으면 목록에 아예 안 뜬다. 따로 만들 화면이 없어 본 화면을 가리킨다 -->
+    <activity-alias
+        android:name="ViewPermissionUsageActivity"
+        android:exported="true"
+        android:targetActivity=".MainActivity"
+        android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW_PERMISSION_USAGE"/>
+        <category android:name="android.intent.category.HEALTH_PERMISSIONS"/>
+      </intent-filter>
+    </activity-alias>
+    <service
+        android:name=".AiService"
+        android:exported="false"
+        android:foregroundServiceType="specialUse">
+      <property
+          android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+          android:value="background ai report generation"/>
+    </service>
+    <service
+        android:name=".TimerService"
+        android:exported="false"
+        android:foregroundServiceType="specialUse">
+      <property
+          android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+          android:value="rest timer chronometer notification"/>
+    </service>
+    <receiver android:name=".VolumeWidget" android:exported="false"
+        android:label="@string/wg_name_volume">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_volume_info"/>
+    </receiver>
+    <activity android:name=".WidgetConfigActivity"
+      android:exported="false"
+      android:theme="@style/CfgTheme">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+      </intent-filter>
+    </activity>
+    <receiver android:name=".LastWidget" android:exported="false"
+        android:label="@string/wg_name_last">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+      </intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_last_info"/>
+    </receiver>
+    <receiver android:name=".TodayWidget" android:exported="false"
+        android:label="@string/wg_name_today">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+      </intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_today_info"/>
+    </receiver>
+    <receiver android:name=".TimerActions" android:exported="false">
+      <intent-filter>
+        <action android:name="com.lwd20.traininglog.STOP"/>
+        <action android:name="com.lwd20.traininglog.RESET"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name=".FreqWidget" android:exported="false"
+        android:label="@string/wg_name_freq">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_freq_info"/>
+    </receiver>
+    <receiver android:name=".WeekWidget" android:exported="false"
+        android:label="@string/wg_name_week">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_week_info"/>
+    </receiver>
+    <receiver android:name=".CutWidget" android:exported="false"
+        android:label="@string/wg_name_cut">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_cut_info"/>
+    </receiver>
+    <receiver android:name=".NextWidget" android:exported="false"
+        android:label="@string/wg_name_next">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_next_info"/>
+    </receiver>
+    <receiver android:name=".PrWidget" android:exported="false"
+        android:label="@string/wg_name_pr">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_pr_info"/>
+    </receiver>
+    <receiver android:name=".LmWidget" android:exported="false"
+        android:label="@string/wg_name_lm">
+      <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+      <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_lm_info"/>
+    </receiver>
+    <!-- 자정에 위젯의 날짜 의존 값을 다시 계산시킴 -->
+    <!-- 부팅/시간대 변경 후 자정 알람을 다시 걸어야 하므로 시스템 브로드캐스트를 받음.
+         알람 자체는 명시적 인텐트라 액션 필터가 필요 없음. -->
+    <receiver android:name=".RefreshReceiver" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+        <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>

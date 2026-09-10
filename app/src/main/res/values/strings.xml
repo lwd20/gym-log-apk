@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="desc_widget_volume_preview">주간 부위별 세트 달성률</string>
+    <string name="desc_widget_week_preview">요일별 수행 부위 격자</string>
+    <string name="desc_widget_freq_preview">부위별 주간 운동 횟수</string>
+    <string name="desc_widget_last_preview">즐겨찾기 종목 직전 중량</string>
+    <string name="desc_widget_today_preview">오늘 수행한 종목과 세트</string>
+    <string name="desc_widget_cut_preview">감량 진행률과 남은 기간</string>
+    <string name="desc_widget_next_preview">다음에 할 부위 추천</string>
+    <string name="desc_widget_pr_preview">최근 기록 경신 종목</string>
+    <string name="wg_name_volume">주간 세트</string>
+    <string name="wg_name_week">주간 격자</string>
+    <string name="wg_name_freq">부위별 횟수</string>
+    <string name="wg_name_last">직전 중량</string>
+    <string name="wg_name_today">오늘 기록</string>
+    <string name="wg_name_cut">감량 진행</string>
+    <string name="wg_name_next">다음 부위</string>
+    <string name="wg_name_pr">최근 PR</string>
+    <string name="wg_name_lm">볼륨 랜드마크</string>
+    <string name="desc_widget_lm_preview">부위별 MEV·MAV·보정 MRV 대비 주간 세트</string>
+</resources>

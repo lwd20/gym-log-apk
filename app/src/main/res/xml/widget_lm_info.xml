@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp" android:minHeight="158dp"
+    android:targetCellWidth="4" android:targetCellHeight="2"
+    android:minResizeWidth="180dp" android:minResizeHeight="82dp"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:configure="com.lwd20.traininglog.WidgetConfigActivity"
+    android:widgetFeatures="reconfigurable|configuration_optional"
+    android:updatePeriodMillis="1800000"
+    android:previewLayout="@layout/widget_lm_preview"
+    android:description="@string/desc_widget_lm_preview"
+    android:initialLayout="@layout/widget_lm"/>

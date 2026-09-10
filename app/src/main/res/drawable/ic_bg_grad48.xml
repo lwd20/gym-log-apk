@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 아이콘 바탕 — 왼쪽 위 밝은 갈색에서 오른쪽 아래 진갈색으로.
+     안드로이드 각도는 45 의 배수만 되므로 315(왼위에서 오른아래)를 쓴다 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:type="linear"
+        android:angle="315"
+        android:startColor="#7C512C"
+        android:endColor="#33200F"/>
+</shape>

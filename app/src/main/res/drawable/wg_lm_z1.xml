@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MEV~MAV — 분석탭 rgba(acc,.18) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#2E8A6320"/>
+</shape>
